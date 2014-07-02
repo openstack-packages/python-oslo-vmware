@@ -2,7 +2,7 @@
 
 Name:           python-oslo-vmware
 Version:        0.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Oslo VMware library for OpenStack projects
 
 License:        ASL 2.0
@@ -73,6 +73,8 @@ rm -rf html/.{doctrees,buildinfo}
 %doc html doc/source/readme.rst
 
 %changelog
+* Wed Jul 2 2014 Jon Bernard <jobernar@redhat.com> - 0.3-2
+- Update spec file to build successfully on el6
 * Wed Jun 25 2014 Jon Bernard <jobernar@redhat.com> - 0.3-1
 - Initial package from Alan Pevec <apevec@redhat.com>
   with cleanups by Jon Bernard
