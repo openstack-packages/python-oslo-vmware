@@ -2,7 +2,7 @@
 
 Name:           python-oslo-vmware
 Version:        0.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Oslo VMware library for OpenStack projects
 
 License:        ASL 2.0
@@ -13,14 +13,15 @@ BuildArch:      noarch
 
 BuildRequires:  python-devel
 BuildRequires:  python-pbr
-BuildRequires:  python-stevedore
-BuildRequires:  python-netaddr
-BuildRequires:  python-iso8601
-BuildRequires:  python-six
-BuildRequires:  python-babel
-BuildRequires:  python-suds
-BuildRequires:  python-eventlet
-BuildRequires:  PyYAML
+
+Requires:  python-stevedore
+Requires:  python-netaddr
+Requires:  python-iso8601
+Requires:  python-six
+Requires:  python-babel
+Requires:  python-suds
+Requires:  python-eventlet
+Requires:  PyYAML
 
 %description
 The Oslo project intends to produce a python library containing infrastructure
@@ -73,6 +74,8 @@ rm -rf html/.{doctrees,buildinfo}
 %doc html doc/source/readme.rst
 
 %changelog
+* Fri Aug 1 2014 Jon Bernard <jobernar@redhat.com> - 0.3-3
+- Fix mistake in runtime requirements
 * Wed Jul 2 2014 Jon Bernard <jobernar@redhat.com> - 0.3-2
 - Update spec file to build successfully on el6
 * Wed Jun 25 2014 Jon Bernard <jobernar@redhat.com> - 0.3-1
