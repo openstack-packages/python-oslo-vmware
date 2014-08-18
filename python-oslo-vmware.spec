@@ -43,13 +43,10 @@ Documentation for OpenStack common VMware library.
 
 %prep
 
-%setup -q -n %{sname}-%{version}
+%setup -q -n %{sname}-%{upstream_version}
 
 # Remove bundled egg-info
 rm -rf %{sname}.egg-info
-
-# make doc build compatible with python-oslo-sphinx RPM
-sed -i 's/oslosphinx/oslo.sphinx/' doc/source/conf.py
 
 %build
 %{__python2} setup.py build
@@ -67,8 +64,8 @@ rm -rf html/.{doctrees,buildinfo}
 %doc README.rst LICENSE
 %{python2_sitelib}/oslo
 %{python2_sitelib}/
-%{python2_sitelib}/%{sname}-%{version}-py?.?-*.pth
-%{python2_sitelib}/%{sname}-%{version}-py?.?.egg-info
+%{python2_sitelib}/%{sname}-%{version}*.pth
+%{python2_sitelib}/%{sname}-%{version}*.egg-info
 
 %files doc
 %doc html doc/source/readme.rst
