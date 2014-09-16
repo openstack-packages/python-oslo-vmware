@@ -52,7 +52,7 @@ rm -rf %{sname}.egg-info
 %{__python2} setup.py build
 
 # generate html docs
-sphinx-build doc/source html
+python setup.py build_sphinx
 
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
@@ -63,14 +63,17 @@ rm -rf html/.{doctrees,buildinfo}
 %files
 %doc README.rst LICENSE
 %{python2_sitelib}/oslo
-%{python2_sitelib}/
 %{python2_sitelib}/%{sname}-%{version}*.pth
 %{python2_sitelib}/%{sname}-%{version}*.egg-info
 
 %files doc
-%doc html doc/source/readme.rst
+%doc doc/build/html doc/source/readme.rst
 
 %changelog
+* Tue Sep 16 2014 Derek Higgins <derekh@redhat.com> - XXX
+- Generate docs with setup.py (as upsteam have)
+- remove extra entrees from %files
+
 * Fri Aug 1 2014 Jon Bernard <jobernar@redhat.com> - 0.3-3
 - Fix mistake in runtime requirements
 * Wed Jul 2 2014 Jon Bernard <jobernar@redhat.com> - 0.3-2
