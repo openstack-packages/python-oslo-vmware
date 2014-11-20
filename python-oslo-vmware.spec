@@ -1,8 +1,8 @@
 %global sname oslo.vmware
 
 Name:           python-oslo-vmware
-Version:        0.3
-Release:        3%{?dist}
+Version:        XXX
+Release:        XXX{?dist}
 Summary:        Oslo VMware library for OpenStack projects
 
 License:        ASL 2.0
@@ -52,32 +52,37 @@ rm -rf %{sname}.egg-info
 %{__python2} setup.py build
 
 # generate html docs
-python setup.py build_sphinx
+export PYTHONPATH="$( pwd ):$PYTHONPATH"
+%{__python2} setup.py build_sphinx
 
 # remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 
 %install
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
 %files
 %doc README.rst LICENSE
-%{python2_sitelib}/oslo
-%{python2_sitelib}/%{sname}-%{version}*.pth
-%{python2_sitelib}/%{sname}-%{version}*.egg-info
+%{python_sitelib}/oslo
+%{python_sitelib}/*.egg-info
+%{python_sitelib}/*-nspkg.pth
 
 %files doc
-%doc doc/build/html doc/source/readme.rst
+%doc doc/build/html
 
 %changelog
-* Tue Sep 16 2014 Derek Higgins <derekh@redhat.com> - XXX
-- Generate docs with setup.py (as upsteam have)
-- remove extra entrees from %files
+* Sun Sep 21 2014 Alan Pevec <apevec@redhat.com> - 0.6.0-1
+- Upstream 0.6.0
+
+* Thu Sep 11 2014 Haïkel Guémar <hguemar@fedoraproject.org> - 0.5.0-1
+- Upstream 0.5.0
 
 * Fri Aug 1 2014 Jon Bernard <jobernar@redhat.com> - 0.3-3
 - Fix mistake in runtime requirements
+
 * Wed Jul 2 2014 Jon Bernard <jobernar@redhat.com> - 0.3-2
 - Update spec file to build successfully on el6
+
 * Wed Jun 25 2014 Jon Bernard <jobernar@redhat.com> - 0.3-1
 - Initial package from Alan Pevec <apevec@redhat.com>
   with cleanups by Jon Bernard
