@@ -45,9 +45,6 @@ Documentation for OpenStack common VMware library.
 
 %setup -q -n %{sname}-%{upstream_version}
 
-# Remove bundled egg-info
-rm -rf %{sname}.egg-info
-
 %build
 %{__python2} setup.py build
 
@@ -64,6 +61,7 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %files
 %doc README.rst LICENSE
 %{python_sitelib}/oslo
+%{python_sitelib}/oslo_vmware
 %{python_sitelib}/*.egg-info
 %{python_sitelib}/*-nspkg.pth
 
