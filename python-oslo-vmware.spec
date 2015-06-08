@@ -1,4 +1,4 @@
-%global sname oslo.vmware
+%global pypi_name oslo.vmware
 
 Name:           python-oslo-vmware
 Version:        XXX
@@ -7,7 +7,7 @@ Summary:        Oslo VMware library for OpenStack projects
 
 License:        ASL 2.0
 URL:            http://launchpad.net/oslo
-Source0:        https://pypi.python.org/packages/source/o/%{sname}/%{sname}-%{version}.tar.gz
+Source0:        https://pypi.python.org/packages/source/o/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 
 BuildArch:      noarch
 
@@ -42,8 +42,7 @@ BuildRequires: python-oslo-sphinx
 Documentation for OpenStack common VMware library.
 
 %prep
-
-%setup -q -n %{sname}-%{upstream_version}
+%setup -q -n %{pypi_name}-%{upstream_version}
 
 %build
 %{__python2} setup.py build
@@ -59,28 +58,13 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %{__python2} setup.py install --skip-build --root %{buildroot}
 
 %files
-%doc README.rst LICENSE
-%{python_sitelib}/oslo
-%{python_sitelib}/oslo_vmware
-%{python_sitelib}/*.egg-info
-%{python_sitelib}/*-nspkg.pth
+%doc README.rst
+%{!?_licensedir:%global license %%doc}
+%license LICENSE
+%{python2_sitelib}/oslo_vmware
+%{python2_sitelib}/*.egg-info
 
 %files doc
 %doc doc/build/html
 
 %changelog
-* Sun Sep 21 2014 Alan Pevec <apevec@redhat.com> - 0.6.0-1
-- Upstream 0.6.0
-
-* Thu Sep 11 2014 Haïkel Guémar <hguemar@fedoraproject.org> - 0.5.0-1
-- Upstream 0.5.0
-
-* Fri Aug 1 2014 Jon Bernard <jobernar@redhat.com> - 0.3-3
-- Fix mistake in runtime requirements
-
-* Wed Jul 2 2014 Jon Bernard <jobernar@redhat.com> - 0.3-2
-- Update spec file to build successfully on el6
-
-* Wed Jun 25 2014 Jon Bernard <jobernar@redhat.com> - 0.3-1
-- Initial package from Alan Pevec <apevec@redhat.com>
-  with cleanups by Jon Bernard
