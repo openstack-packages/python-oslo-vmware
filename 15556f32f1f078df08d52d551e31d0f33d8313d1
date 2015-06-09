@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "facab960_7f26cfcf",
+        "filename": "python-oslo-vmware.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1003941
+      },
+      "writtenOn": "2015-06-09T10:36:25Z",
+      "side": 1,
+      "message": "This needs to be removed, due to https://github.com/openstack/oslo.vmware/commit/7ebc48cf9dd5d1445e8ab59ad6fb3b1dc517c4c2",
+      "range": {
+        "startLine": 64,
+        "startChar": 19,
+        "endLine": 64,
+        "endChar": 23
+      },
+      "revId": "15556f32f1f078df08d52d551e31d0f33d8313d1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
