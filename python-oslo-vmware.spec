@@ -37,6 +37,15 @@ Group:      Documentation
 
 BuildRequires: python-sphinx
 BuildRequires: python-oslo-sphinx
+# autodoc API
+BuildRequires: python-fixtures
+BuildRequires: python-mock
+BuildRequires: python-netaddr
+BuildRequires: python-oslo-concurrency
+BuildRequires: python-oslo-i18n
+BuildRequires: python-oslo-utils
+BuildRequires: python-requests >= 2.3.0
+BuildRequires: python-suds
 
 %description doc
 Documentation for OpenStack common VMware library.
