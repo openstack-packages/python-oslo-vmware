@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac1b152_e3b8dc2c",
+        "filename": "python-oslo-vmware.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1002601
+      },
+      "writtenOn": "2015-12-18T10:41:51Z",
+      "side": 1,
+      "message": "missing package python3-oslo-vmware-tests",
+      "revId": "15bc50aaf6d1de52d415346766d39e3c2b7e39eb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
