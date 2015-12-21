@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_31095096",
+        "filename": "python-oslo-vmware.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1003941
+      },
+      "writtenOn": "2015-12-21T11:52:05Z",
+      "side": 1,
+      "message": "There is no python3-suds package available in Fedora. Checking requirements.txt, it is requesting suds-jurko \u003e\u003d 0.6 (https://pypi.python.org/pypi/suds-jurko/0.6), which is a fork of the codebase used in Fedora. Should we update the Fedora package to use this one?",
+      "range": {
+        "startLine": 123,
+        "startChar": 19,
+        "endLine": 123,
+        "endChar": 23
+      },
+      "revId": "2abecc3c0345e6c48c9b659eb9d849cb12a451e9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
