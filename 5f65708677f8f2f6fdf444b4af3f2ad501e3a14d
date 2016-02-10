@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_2eb5e17d",
+        "filename": "python-oslo-vmware.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1003941
+      },
+      "writtenOn": "2016-02-10T12:11:55Z",
+      "side": 1,
+      "message": "This is not going to work in Fedora Rawhide. Since it\u0027s merged already, I\u0027ll propose a follow-up fix.",
+      "range": {
+        "startLine": 213,
+        "startChar": 0,
+        "endLine": 213,
+        "endChar": 34
+      },
+      "revId": "5f65708677f8f2f6fdf444b4af3f2ad501e3a14d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
