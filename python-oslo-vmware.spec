@@ -5,9 +5,11 @@
 %global with_python3 1
 %endif
 
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:           python-%{pkg_name}
-Version:        XXX
-Release:        XXX
+Version:        2.5.0
+Release:        1%{?dist}
 Summary:        Oslo VMware library for OpenStack projects
 
 License:        ASL 2.0
@@ -216,3 +218,6 @@ rm -rf .testrepository
 %endif
 
 %changelog
+* Wed Mar 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.5.0-
+- Update to 2.5.0
+
